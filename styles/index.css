@@ -45,6 +45,7 @@ a {
 
 :root {
   --container-width: 1136px;
+  --container-width-tab:704px;
 }
 
 .nav {
@@ -93,6 +94,36 @@ a {
 
 .social-menu__link svg:hover path {
   stroke: #FD9222;
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (min-width:768px) and (max-width:1199px) {
+  .nav {
+    width: var(--container-width-tab);
+    padding: 24px 0 32px;
+  }
+
+  .nav-logo img {
+    width: 144px;
+    height: 21px;
+    margin-top: 5px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .social-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+  }
 }
 
 .banner {
@@ -159,9 +190,20 @@ a {
   color: #FD9222;
 }
 
+@media (min-width:768px) and (max-width:1199px) {
+  .banner {
+    width: var(--container-width-tab);
+    margin-bottom: 50px;
+    background-image: url("../images/chocolate-covered-cocoa-powder-tab.png");
+  }
+  
+  .banner-wrap {
+    padding: 671px 0 40px 40px;
+  }
+}
+
 .features-list {
   width: 100%;
-  height: 344px;
   display: flex;
   justify-content: space-between;
   background-color: #1E1823;
@@ -169,6 +211,7 @@ a {
 
 .features-list__item {
   flex-grow: 1;
+  min-height: 344px;
 }
 
 .features-list__text-block {
@@ -211,6 +254,22 @@ a {
   letter-spacing: -0.28px;
 }
 
+@media (min-width:768px) and (max-width:1199px) { 
+  .features-list {
+    flex-wrap: wrap;
+  }
+
+  .features-list__item {
+     width: 50%;
+     min-height: 300px;
+     flex-grow: 0;
+  }
+  
+  .features-list__text-block {
+    padding: 50px 18px 0 32px;
+  }
+}
+
 .adds {
   padding-top: 128px;
 }
@@ -247,6 +306,7 @@ a {
   width: var(--container-width);
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 50px;
 }
@@ -286,6 +346,26 @@ a {
   color: #FFF;
 }
 
+@media (min-width:768px) and (max-width:1199px) { 
+  .adds {
+    padding-top: 100px;
+  }
+    
+  .adds-list {
+    width: var(--container-width-tab);
+  }
+  
+  .adds-list__item {
+    width: 336px;
+    margin-bottom: 32px;
+  }
+   
+  .adds-list__img {
+    width: 224px;
+    height: 171px;
+  }
+}
+
 .process {
   padding-top: 128px;
 }
@@ -302,15 +382,15 @@ a {
 
 .process-wrap {
   width: var(--container-width);
-  height: 400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 20px;
 }
 
 .process-img {
   width: 600px;
+  height: 400px;
 }
 
 .process-img img{
@@ -320,7 +400,12 @@ a {
 }
 
 .process-text {
+  box-sizing: border-box;
   width: 516px;
+  height: 400px;
+  border-radius: 15px;
+  background-color: #FFF;
+  padding: 32px;
 }
 
 .process-text__title {
@@ -335,6 +420,34 @@ a {
 
 .process-list__point {
   margin-bottom: 24px;
+}
+
+@media (min-width:768px) and (max-width:1199px) { 
+  .process {
+    padding-top: 68px;
+  }
+
+  .process-title {
+    margin-bottom: 52px;  
+  }
+ 
+  .process-wrap {
+    width: 614px;
+    flex-direction: column;
+  }
+
+  .process-img {
+    width: 100%;
+  }
+  
+  .process-text {
+    width: 100%;
+    padding-left: 32px;
+  }
+
+  .process-list__point {
+    margin-bottom: 18px;
+  }
 }
 
 .products {
@@ -355,7 +468,7 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  margin-left: 110px;
+  margin-left: 33px;
   margin-top: 50px;
   overflow-x: hidden;
 }
@@ -364,9 +477,11 @@ a {
   box-sizing: border-box;
   width: 270px;
   height: 364px;
+  flex: 0 0 auto;
+  background-color: #FFF;
 }
 
-.product-img {
+.product-card__img {
   width: 230px;
   height: 200px;
   margin: 0 auto;
@@ -379,6 +494,7 @@ a {
 }
 
 .product-info {
+  width: 100%;
   margin-top: 8px;
   text-align: center;
 }
@@ -418,6 +534,30 @@ a {
 .product-btn:hover {
   color: #FD9222;
 }
+
+.products-pagination {
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.products-pagination__btn {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: rgba(17, 17, 17, 0.10);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.7s;
+}
+
+.products-pagination__btn:hover,
+.products-pagination__btn:active {
+  background-color: #FD9222;
+}
+
 
 .top {
   padding-top: 128px;
@@ -489,6 +629,7 @@ a {
 
 .reviews {
   padding: 128px 0;
+  text-align: center;
 }
 
 .reviews-title {
@@ -498,7 +639,6 @@ a {
   letter-spacing: -0.72px;
   text-transform: uppercase;
   margin-bottom: 50px;   
-  text-align: center;
 }
 
 .reviews-list {
@@ -528,7 +668,6 @@ blockquote {
   position: relative;
   top: -40px;
   left: 130px;
-
 }
 
 .reviews-list__author {
@@ -542,9 +681,52 @@ blockquote {
 .reviews-list__quote {
   box-sizing: border-box;
   padding: 18px 24px;
-  text-align: center;
   position: relative;
   top: -30px;
+}
+
+.reviews-pagination {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.reviews-pagination__btn {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: rgba(17, 17, 17, 0.10);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.7s;
+}
+
+.reviews-pagination__btn:hover,
+.reviews-pagination__btn:active {
+  background-color: #FD9222;
+}
+
+.reviews-btn {
+  width: 222px;
+  height: 50px;
+  margin-top: 50px;
+  border: 1px solid #FD9222;
+  border-radius: 100px;
+  background-color: transparent;
+  color: #111;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color 0.7s, color 0.7s;  
+}
+
+.reviews-btn:hover {
+  background-color: #FD9222;
+  color: #fff;
 }
 
 .subscription {
