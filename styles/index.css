@@ -45,7 +45,7 @@ a {
 
 :root {
   --container-width: 1136px;
-  --container-width-tab:704px;
+  --container-width-tab: 704px;
 }
 
 .nav {
@@ -558,7 +558,6 @@ a {
   background-color: #FD9222;
 }
 
-
 .top {
   padding-top: 128px;
 }
@@ -589,6 +588,7 @@ a {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 15px;
 }
 
 .top-info {
@@ -607,9 +607,8 @@ a {
 }
 
 .top-info__btn {
-  width: 144px;
+  width: 162px;
   height: 45px;
-  margin-right: 14px;
   border: none;
   border-radius: 100px;
   background-color: #FD9222;
@@ -627,9 +626,33 @@ a {
   color: #FD9222;
 }
 
+@media (min-width:768px) and (max-width:1199px) { 
+  .top-list {
+    width: var(--container-width-tab);
+  }
+  
+  .top-list__item {
+    width: 344px;
+  }
+
+  .top-list__item:nth-child(3) {
+    display:none;
+  }
+
+  .top-info {
+    width: var(--container-width-tab);
+  }
+  
+  .top-info__text {
+    width: 306px;
+    font-size: 14px;
+  } 
+}
+
 .reviews {
   padding: 128px 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .reviews-title {
@@ -642,17 +665,17 @@ a {
 }
 
 .reviews-list {
-  width: var(--container-width);
-  margin: 0 auto;
-  margin-top: 100px;
+  margin: 100px 0 0 32px;
   display: flex;
   justify-content: space-between;
+  gap: 28px;
 }
 
 .reviews-list__item {
   width: 360px;
   height: 200px;
   background-color: #FFF;
+  flex: 0 0 auto;
 }
 
 blockquote {
@@ -729,6 +752,16 @@ blockquote {
   color: #fff;
 }
 
+@media (min-width:768px) and (max-width:1199px) { 
+  .reviews-list {
+    gap: 16px;
+  }
+  
+  .reviews-list__item {
+    width: 344px;
+  }
+}
+
 .subscription {
   background-image: url("../images/Subcribe.jpg");
   background-size: cover;
@@ -762,7 +795,7 @@ blockquote {
 }
 
 .subscription-btn {
-  width: 144px;
+  width: 172px;
   height: 45px;
   margin-right: 14px;
   border: none;
@@ -850,7 +883,7 @@ blockquote {
   width: var(--container-width);
   margin: 0 auto;
   border-top: 1px solid rgba(255, 255, 255, 0.10);
-  padding: 24px 0 30px;
+  padding: 24px 0 50px;
 }
 
 .footer-menu {
@@ -870,4 +903,14 @@ blockquote {
 
 .footer-menu__link:hover {
   color: #FD9222;
+}
+
+@media (min-width:768px) and (max-width:1199px) { 
+  .footer-top {
+    width: var(--container-width-tab);
+  }
+ 
+  .footer-bottom {
+    width: var(--container-width-tab);
+  }
 }
