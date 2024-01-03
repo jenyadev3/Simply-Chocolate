@@ -46,6 +46,7 @@ a {
 :root {
   --container-width: 1136px;
   --container-width-tab: 704px;
+  --container-width-mob: 335px;
 }
 
 .nav {
@@ -105,7 +106,9 @@ a {
     width: var(--container-width-tab);
     padding: 24px 0 32px;
   }
+}
 
+@media (min-width:375px) and (max-width:1199px) {
   .nav-logo img {
     width: 144px;
     height: 21px;
@@ -123,6 +126,18 @@ a {
   .burger-menu {
     display: block;
     cursor: pointer;
+  }
+}
+
+@media (min-width:375px) and (max-width:767px) {
+  .nav {
+    width: var(--container-width-mob);
+    padding: 23.5px 0 17.5px;
+  }
+
+  .burger-menu {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -202,6 +217,34 @@ a {
   }
 }
 
+@media (min-width:375px) and (max-width:767px) {
+  .banner {
+    width: var(--container-width-mob);
+    margin-bottom: 70px;
+    background-image: url("../images/chocolate-covered-cocoa-powder-mob.png");
+  }
+  
+  .banner-wrap {
+    width: 299px;
+    padding: 395px 20px 20px;
+  }
+
+  .banner-slogan {
+    font-size: 20px;
+  }
+  
+  .banner-btn {
+    width: 120px;
+    height: 41px;
+  }
+   
+  .banner-link {
+    width: 159px;
+    height: 41px;
+    padding: 12px 0;
+  }
+}
+
 .features-list {
   width: 100%;
   display: flex;
@@ -270,6 +313,22 @@ a {
   }
 }
 
+@media (min-width:375px) and (max-width:767px) {
+  .features-list {
+    flex-wrap: wrap;
+  }
+
+  .features-list__item {
+     width: 336px;
+     min-height: 300px;
+     flex-grow: 0;
+  }
+  
+  .features-list__text-block {
+    padding: 30px 10px 0 20px;
+  }
+}
+
 .adds {
   padding-top: 128px;
 }
@@ -334,6 +393,12 @@ a {
   margin-top: 28px;
 }
 
+.adds-list__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .adds-list__name {
   font-weight: 600;
   line-height: 18px;
@@ -350,7 +415,7 @@ a {
   .adds {
     padding-top: 100px;
   }
-    
+ 
   .adds-list {
     width: var(--container-width-tab);
   }
@@ -363,6 +428,34 @@ a {
   .adds-list__img {
     width: 224px;
     height: 171px;
+  }
+}
+
+@media (min-width:375px) and (max-width:767px) {
+  .adds {
+    padding-top: 72px;
+  }
+
+  .adds-text-block {
+    width: 335px;
+  }
+  
+  .adds-title-block {
+    width: 283px;
+  }
+  
+  .adds-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .adds-list {
+    width: var(--container-width-mob);
+  }
+  
+  .adds-list__item {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -402,7 +495,7 @@ a {
 .process-text {
   box-sizing: border-box;
   width: 516px;
-  height: 400px;
+  min-height: 400px;
   border-radius: 15px;
   background-color: #FFF;
   padding: 32px;
@@ -433,8 +526,13 @@ a {
  
   .process-wrap {
     width: 614px;
-    flex-direction: column;
   }
+}
+
+@media (min-width: 375px) and (max-width:1199px) {
+  .process-wrap {
+    flex-direction: column;
+  } 
 
   .process-img {
     width: 100%;
@@ -447,6 +545,16 @@ a {
 
   .process-list__point {
     margin-bottom: 18px;
+  }
+}
+
+@media (min-width:375px) and (max-width:767px) {
+  .process-title {
+    margin-bottom: 32px;  
+  }
+ 
+  .process-wrap {
+    width: var(--container-width-mob);
   }
 }
 
@@ -558,6 +666,38 @@ a {
   background-color: #FD9222;
 }
 
+@media (min-width:375px) and (max-width:767px) {
+  .products {
+    padding-top: 72px;
+  }
+  
+  .products-title {
+    font-size: 20px;
+  }
+  
+  .product-cards {
+    margin-left: 20px;
+    margin-top: 32px;
+  }
+  
+  .product-card {
+    width: var(--container-width-mob);
+  }
+      
+  .product-name {
+    font-size: 18px;
+  }
+  
+  .product-description {
+    font-size: 12px;
+    margin-bottom: 18px;  
+  }
+  
+  .products-pagination {
+    margin-top: 20px;
+  }
+}
+
 .top {
   padding-top: 128px;
 }
@@ -582,6 +722,11 @@ a {
 .top-list__item {
   width: 368px;
   height: 464px;
+}
+
+.top-list__item.mob {
+  display: none;
+  max-height: 100px;
 }
 
 .top-list__item img {
@@ -635,18 +780,52 @@ a {
     width: 344px;
   }
 
-  .top-list__item:nth-child(3) {
-    display:none;
-  }
-
   .top-info {
     width: var(--container-width-tab);
   }
-  
+}
+
+@media (min-width:375px) and (max-width:1199px) { 
+  .top-list__item:nth-child(4) {
+    display:none;
+  }
+
   .top-info__text {
     width: 306px;
-    font-size: 14px;
-  } 
+  }   
+}
+
+@media (min-width:375px) and (max-width:767px) { 
+  .top {
+    padding-top: 72px;
+  }
+
+  .top-list {
+    width: var(--container-width-mob);
+    flex-direction: column;
+  }
+
+  .top-list__item.mob {
+    display: block;
+  }
+
+  .top-list__item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .top-info {
+    width: var(--container-width-mob);
+    flex-direction: column;
+  }
+
+  .top-info .top-info__text {
+    display:none;
+  }
+
+  .top-info__btn {
+    margin: 0 auto;
+  }
 }
 
 .reviews {
@@ -762,6 +941,20 @@ blockquote {
   }
 }
 
+@media (min-width:375px) and (max-width:767px) { 
+  .reviews {
+    padding-bottom: 72px;
+  }
+
+  .reviews-list {
+    margin: 70px 0 0 20px;
+  }
+
+  .reviews-list__item {
+    width: var(--container-width-mob);
+  }
+}
+
 .subscription {
   background-image: url("../images/Subcribe.jpg");
   background-size: cover;
@@ -813,6 +1006,27 @@ blockquote {
 .subscription-btn:hover {
   background-color: #FCF1E0;
   color: #FD9222;
+}
+
+@media (min-width:375px) and (max-width:767px) { 
+  .subscription {
+    background-image: url("../images/Subcribe-mob.jpg");
+  }
+  
+  .subscription-wrap {
+    width: var(--container-width-mob);
+    padding: 62px 20px;
+  }
+  
+  .subscription-title {
+    width: 290px;
+    font-size: 20px;
+  }
+   
+  .subscription-btn {
+    width: 128px;
+    height: 41px;
+  }
 }
 
 .footer {
@@ -909,8 +1123,29 @@ blockquote {
   .footer-top {
     width: var(--container-width-tab);
   }
- 
+
   .footer-bottom {
     width: var(--container-width-tab);
+  }
+}
+
+@media (min-width:375px) and (max-width:767px) { 
+  .footer-top {
+    width: var(--container-width-mob);
+    padding: 32px 0;
+    flex-wrap: wrap;
+  }
+
+  .footer-text {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+ 
+  .footer-bottom {
+    width: var(--container-width-mob);
+  }
+
+  .footer-menu {
+    flex-direction: column;
   }
 }
