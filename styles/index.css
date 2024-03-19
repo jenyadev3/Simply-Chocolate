@@ -133,7 +133,7 @@ a {
   left: 252px;
 }
 
-.burger, .burger-menu, .close-btn {
+.burger, .burger-menu, .close-btn, .burger-wrap {
   display: none;
 }
 
